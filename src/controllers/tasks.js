@@ -3,14 +3,14 @@ import { conection } from "../database"
 export const getTasks = async (req, res) => {
     const conex = await conection()
     const [rows] = await conex.query("SELECT * FROM task")
-    res.send("hello word")
+    res.json(rows)
 }
 export const getTasksId = async (req, res) => {
     const conex = await conection()
     const [rows] = await conex.query("SELECT * FROM task WHERE id= ?", [
         req.params.id
     ])
-    res.send('hello word id')
+    res.json(rows)
 }
 export const getTasksCount = async (req, res) => {
     const conex = await conection()

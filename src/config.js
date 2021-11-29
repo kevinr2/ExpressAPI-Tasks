@@ -2,8 +2,8 @@ import { config as dotenv } from 'dotenv'
 dotenv()
 
 export const config = {
-    host: "localhost",
-    user: "root",
+    host: process.env.HOST,
+    user: process.env.USER,
     password: "",
-    database: "tasks"
+    database: process.env.DB
 }
